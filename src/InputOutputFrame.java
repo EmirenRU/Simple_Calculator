@@ -5,16 +5,8 @@ import java.awt.event.ActionListener;
 public final class InputOutputFrame
 {
 
-    // Вводим значения res;
-    // =
-    // Вводим значения inp
-    // действия
     private static String s0,s1,s2;
-
-
     private static JTextField output = new JTextField();
-
-
 
     JPanel panel;
 
@@ -23,7 +15,7 @@ public final class InputOutputFrame
 
         this.panel = panel;
 
-        output.setBounds(0,0, 305, 175);
+        output.setBounds(0,0, 320, 175);
         output.setEditable(false);
         output.setFocusable(false);
         output.setHorizontalAlignment(output.RIGHT);

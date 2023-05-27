@@ -11,113 +11,67 @@ public class Buttons implements ActionListener, KeyListener
     static private ArrayList<JButton> buttons = new ArrayList<>();
     JPanel panel;
     InputOutputFrame ioframe;
-    String operation;
-
-
-    //nums
-    private static JButton button0 = new JButton("0");
-    private static JButton button1 = new JButton("1");
-    private static JButton button2 = new JButton("2");
-    private static JButton button3 = new JButton("3");
-    private static JButton button4 = new JButton("4");
-    private static JButton button5 = new JButton("5");
-    private static JButton button6 = new JButton("6");
-    private static JButton button7 = new JButton("7");
-    private static JButton button8 = new JButton("8");
-    private static JButton button9 = new JButton("9");
-
-    // operations
-    private static JButton buttonAdd = new JButton("+");
-    private static JButton buttonSub = new JButton("-");
-    private static JButton buttonDivide = new JButton("/");
-    private static JButton buttonMultiply = new JButton("*");
-    // Delete
-    private static JButton buttonDel = new JButton("DELETE");
-    // pow
-    private static JButton buttonPow = new JButton("n^k");
-    // sqrt
-    private static JButton buttonSqrt = new JButton("sqrt");
-    // Factorial
-    private static JButton buttonFactorial = new JButton("n!");
-    // =
-    private static JButton buttonEquility = new JButton("=");
 
     static StringBuilder num = new StringBuilder();
 
 
     Buttons(JPanel panel, InputOutputFrame ioframe)
     {
-
         this.panel = panel;
         this.ioframe = ioframe;
 
-        button1.setBounds(10,2,70,50);
-        button2.setBounds(80,2,70,50);
-        button3.setBounds(150, 2, 70,50);
-        button4.setBounds(10, 54, 70, 50);
-        button5.setBounds(80, 54, 70, 50);
-        button6.setBounds(150, 54, 70, 50);
-        button7.setBounds(10, 104, 70, 50);
-        button8.setBounds(80, 104, 70, 50);
-        button9.setBounds(150, 104, 70, 50);
-        button0.setBounds(80, 154, 70, 50);
 
-        buttonDel.setBounds(220, 2, 78, 50);
+        buttons.add(new JButton("0")); // 0
+        buttons.add(new JButton("1")); // 1
+        buttons.add(new JButton("2")); // 2
+        buttons.add(new JButton("3")); // 3
+        buttons.add(new JButton("4")); // 4
+        buttons.add(new JButton("5")); // 5
+        buttons.add(new JButton("6")); // 6
+        buttons.add(new JButton("7")); // 7
+        buttons.add(new JButton("8")); // 8
+        buttons.add(new JButton("9")); // 9
 
-        buttonAdd.setBounds(220, 204, 78, 50); // 244
-        buttonSub.setBounds(220, 154, 78, 50); // 184
-        buttonDivide.setBounds(220, 54, 78, 50); // 64
-        buttonMultiply.setBounds(220, 104, 78, 50); // 124
+        buttons.add(new JButton("+")); // 10
+        buttons.add(new JButton("-")); // 11
+        buttons.add(new JButton("*")); // 12
+        buttons.add(new JButton("/")); // 13
+        buttons.add(new JButton("DELETE")); // 14
+        buttons.add(new JButton("n^k"));    // 15
+        buttons.add(new JButton("sqrt"));   // 16
+        buttons.add(new JButton("n!"));     // 17
+        buttons.add(new JButton("="));      // 18
 
-        buttonFactorial.setBounds(10, 204,70,50);
-        buttonPow.setBounds(80, 204,70,50);
-        buttonSqrt.setBounds(150,204,70,50);
+        buttons.get(0).setBounds(80, 154, 70, 50);
+        buttons.get(1).setBounds(10,2,70,50);
+        buttons.get(2).setBounds(80,2,70,50);
+        buttons.get(3).setBounds(150, 2, 70,50);
+        buttons.get(4).setBounds(10, 54, 70, 50);
+        buttons.get(5).setBounds(80, 54, 70, 50);
+        buttons.get(6).setBounds(150, 54, 70, 50);
+        buttons.get(7).setBounds(10, 104, 70, 50);
+        buttons.get(8).setBounds(80, 104, 70, 50);
+        buttons.get(9).setBounds(150, 104, 70, 50);
 
-        buttonEquility.setBounds(220,254,78,50);
+        buttons.get(10).setBounds(220, 204, 78, 50); // 244
+        buttons.get(11).setBounds(220, 154, 78, 50); // 184
+        buttons.get(13).setBounds(220, 54, 78, 50); // 64
+        buttons.get(12).setBounds(220, 104, 78, 50); // 124
 
-        panel.add(button0);
-        panel.add(button1);
-        panel.add(button2);
-        panel.add(button3);
-        panel.add(button4);
-        panel.add(button5);
-        panel.add(button6);
-        panel.add(button7);
-        panel.add(button8);
-        panel.add(button9);
+        buttons.get(14).setBounds(220, 2, 78, 50);
 
-        panel.add(buttonDel);
-        panel.add(buttonAdd);
-        panel.add(buttonSub);
-        panel.add(buttonDivide);
-        panel.add(buttonMultiply);
-        panel.add(buttonFactorial);
-        panel.add(buttonPow);
-        panel.add(buttonSqrt);
+        buttons.get(15).setBounds(80, 204,70,50);
+        buttons.get(16).setBounds(150,204,70,50);
+        buttons.get(17).setBounds(10, 204,70,50);
 
-        panel.add(buttonEquility);
+        buttons.get(18).setBounds(220,254,78,50);
 
-        button0.addActionListener(this);
-        button1.addActionListener(this);
-        button2.addActionListener(this);
-        button3.addActionListener(this);
-        button4.addActionListener(this);
-        button5.addActionListener(this);
-        button6.addActionListener(this);
-        button7.addActionListener(this);
-        button8.addActionListener(this);
-        button9.addActionListener(this);
-        buttonAdd.addActionListener(this);
-        buttonSub.addActionListener(this);
-        buttonDivide.addActionListener(this);
-        buttonMultiply.addActionListener(this);
+        for (int i = 0; i < buttons.size(); i++)
+        {
+            buttons.get(i).addActionListener(this);
 
-        buttonEquility.addActionListener(this);
-
-        buttonSqrt.addActionListener(this);
-        buttonPow.addActionListener(this);
-        buttonFactorial.addActionListener(this);
-        buttonDel.addActionListener(this);
+            panel.add(buttons.get(i));
+        }
 
 
     }
